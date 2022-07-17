@@ -421,7 +421,7 @@ footer .column i + i {
   z-index: 9999;
   transition: all 1.5s ease;
 }
-#myBtn {
+.myBtn {
   display: none;
   position: fixed;
   height: 40px;
@@ -439,6 +439,6 @@ footer .column i + i {
   border-radius: 50%;
 }
 
-#myBtn:hover {
+.myBtn:hover {
   background-color: #404040;
 }
