@@ -24,7 +24,30 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        twemoji.parse(document.body);
+      });
+    </script>
+    <script async defer data-soopr-token='pt_c3169715d1ba31ab7ff558352fcf35ff' src='https://sdk.soopr.co/soopr.js'></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        const typewriterElement = document.querySelector('.typewrite');
+        const textToType = JSON.parse(typewriterElement.getAttribute('data-type'));
 
+        textToType.forEach((text) => {
+          const spanElement = document.createElement('span');
+          spanElement.innerHTML = text;
+          typewriterElement.appendChild(spanElement    );
+        });
+
+        twemoji.parse(typewriterElement, {
+          folder: 'svg',
+          ext: '.svg',
+        });
+      });
+    </script>
 
 <!-- Add following div tag where you want show soopr share buttons -->
 
@@ -35,7 +58,7 @@
 
   
   </head>
-<script async defer data-soopr-token='pt_c3169715d1ba31ab7ff558352fcf35ff' src='https://sdk.soopr.co/soopr.js'></script>
+
 
   <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top">
