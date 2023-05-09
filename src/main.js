@@ -19,6 +19,23 @@ let nCount = selector => {
       });
   });
 };
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const typewriterElement = document.querySelector('.typewrite');
+    const textToType = JSON.parse(typewriterElement.getAttribute('data-type'));
+
+    textToType.forEach((text) => {
+      const spanElement = document.createElement('span');
+      spanElement.innerHTML = text;
+      typewriterElement.appendChild(spanElement);
+    });
+
+    twemoji.parse(typewriterElement, {
+      folder: 'svg',
+      ext: '.svg',
+    });
+  });
+</script>
 
 let a = 0;
 $(window).scroll(function () {
