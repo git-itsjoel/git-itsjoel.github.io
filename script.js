@@ -157,3 +157,18 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+const contactTabButton = document.querySelector("[data-nav-link='Contact']");
+const contactSection = document.querySelector("[data-page='contact']");
+const otherSections = document.querySelectorAll("[data-page]");
+
+contactTabButton.addEventListener("click", function () {
+  // Show the contact section
+  contactSection.classList.add("active");
+  // Hide other sections
+  otherSections.forEach(section => {
+    if (section !== contactSection) {
+      section.classList.remove("active");
+    }
+  });
+});
