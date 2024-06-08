@@ -1,309 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <title>𝙄𝙩𝙨 ⚡ 𝙅𝙤𝙚𝙡</title>
-
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" type="text/css" href="src/style.css" />
-    <link rel="stylesheet" href="src/mobile-style.css" />
-    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-    
-    <script async defer data-soopr-token='pt_c3169715d1ba31ab7ff558352fcf35ff' src='https://sdk.soopr.co/soopr.js'></script>
-
-  
-  </head>
-
-
-  <body>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
-      <i class="fa fa-chevron-up" aria-hidden="true"></i>
-    </button>
-    <script>
-      var mybutton = document.getElementById("myBtn");
-      window.onscroll = function () {
-        scrollFunction();
-      };
-      function scrollFunction() {
-        if (
-          document.body.scrollTop > 300 ||
-          document.documentElement.scrollTop > 300
-        ) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-      function topFunction() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    </script>
-
-    <header id="main-header">
-      <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#">
-            <i class="fas fa-circle-notch"></i> JB°
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-            <i class="fas fa-align-right text-light"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="mr-auto"></div>
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#main-header"
-                  >𝗛𝗢𝗠𝗘 <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#main-about">𝗔𝗕𝗢𝗨𝗧</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#main-contact">𝗖𝗢𝗡𝗧𝗔𝗖𝗧</a>
-              </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-          </div>
         </nav>
-      </div>
-      <div class="container text-left header-ctr">
-        <div class="row d-flex align-items-center">
-          <div class="col-md-7 col-sm-12 header-text">
-            <h2>
-              
-              <a
-                class="typewrite"
-                data-period="2000"
-                data-type='[ "10𝗍𝗁 𝖦𝗋𝖺𝖽𝖾 𝖲𝗍𝗎𝖽𝖾𝗇𝗍 👱🏼‍♂️", "𝖵𝗂𝖽𝖾𝗈 & 𝖯𝗁𝗈𝗍𝗈 𝖤𝖽𝗂𝗍𝗈𝗋", "𝖳𝗋𝗒𝗂𝗇𝗀 𝖳𝗈 𝖫𝖾𝖺𝗋𝗇 𝖣𝗂𝖿𝖿𝖾𝗋𝖾𝗇𝗍 𝖯𝗋𝗈𝗀𝗋𝖺𝗆𝗆𝗂𝗇𝗀 𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾𝗌 🙂", "𝖫𝗈𝗏𝖾𝗌 𝖳𝗈 𝖢𝗈𝖽𝖾 & 𝖤𝖽𝗂𝗍"]'
-              >
-                <span class="wrap"></span>
-              </a>
-            </h2>
-            <br/>
-
-            <h1>Hey👋🏻, I am Joel Boban</h1>
-            <h5>
-              A High School Student with Python as
-              favorite programming language.
-            </h5>
-
-            <div class="text-left">
-              <a
-                class="button btn btn-light px-5 py-1.5 sayhi"
-                href="mailto:joelbobanoffline@gmail.com?Subject=Hello%20Joel"
-                target="_top"
-                >Say Hi!</a
-              >
-            </div>
-            <br />
-          </div>
-        </div>
-      </div>
     </header>
-
-    <main id="main-screen">
-      <section class="section-1">
-        <div class="screen">
-          <div class="content-sec">
-            <p>
-              I'm a little bit of a geek - I have to be the first person to get
-              new things when they come out. I always want to buy and try new
-              gadgets.
-            </p>
-            <p class="text-right">- Tom Felton</p>
-          </div>
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Your first impression matters.</p>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Brief introduction about yourself.</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project Title</h3>
+            <p>Short description of the project.</p>
         </div>
-        <div class="screen">
-          <div class="content-sec">
-            <p>
-              Someone who I would describe as a 'geek' or 'nerd' is a person who
-              loves something to its greatest extent and then look for other
-              people who love it the same way so they can celebrate loving it
-              together.
-            </p>
-            <p class="text-right">- Wil Wheaton</p>
-          </div>
-        </div>
-        <div class="screen">
-          <div class="content-sec">
-            <p>
-              No longer is a geek identifiable by a pale complexion,
-              black-rimmed glasses, a bowling shirt that says 'Nerd World
-              Order'. No, geeks are everywhere. And they're cool!
-            </p>
-            <p class="text-right">- Faith Salie</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="main-about" class="section-2">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-md-6 col-12">
-              <div class="pray">
-                <img src="assets/my-pic.jpg" alt="my-pic" />
-              </div>
-            </div>
-            <div class="col-md-6 col-12">
-              <div class="panel text-left">
-                <h2>About</h2>
-                <h3>Joel Boban</h3>
-                <h4>High School Student at GHSS, THEVANOOR.</h4>
-                <p>
-                  I'm currently learning python and practicing it.
-                  Interested to learn Java and HTML.
-                </p>
-                <h4>SKILLS</h4>
-                <p>
-                  Python, Pyrogram, Linux, Android, Windows, Editing etc.
-                </p>
-
-                <br/>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-3 container-fluid p-0">
-        <div class="container-fluid text-center">
-          <div
-            class="numbers d-flex flex-md-row flex-wrap justify-content-center"
-          >
-            <div class="rect">
-              <h1>2275</h1>
-              <a href="https://t.me/joe_noob/"
-                ><p><i class="fab fa-telegram"></i> Telegram</p></a
-              >
-            </div>
-            <div class="rect">
-              <h1>75</h1>
-              <a href="https://github.com/JoelBobanOffline" target="_blank"
-                ><p><i class="fab fa-github"></i> Github</p></a
-              >
-            </div>
-            <div class="rect">
-              <h1>573</h1>
-              <a href="https://instagram.com/ig.itsjoel/" target="_blank"
-                ><p><i class="fab fa-instagram"></i> Instagram</p></a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      
-      <section id="main-contact" class="section-5">
-        <div class="contact">
-          <div class="form-container">
-            <h2>Contact Me</h2>
-            <form
-              method="POST"
-              action="https://formspree.io/joelbobanoffline@gmail.com"
-            >
-              <div class="input-field">
-                <input type="text" name="name" required="" />
-                <label>Name*</label>
-              </div>
-              <div class="input-field">
-                <input type="email" name="email" required="" />
-                <label>Email*</label>
-              </div>
-              <div class="input-field">
-                <textarea name="message" rows="5" required=""></textarea>
-                <label>Message*</label>
-              </div>
-              <input type="submit" name="" value="Send Message" class="btn" />
-            </form>
-          </div>
-        </div>
-        <div class="quote">
-          <h4>
-            Computers let you make mistake faster than any invention in human
-            history - with the posible exceptions of handguns and tequila.
-            <br />
-            <br /><b>- Someone on the Internet </b>
-          </h4>
-        </div>
-      </section>
-    </main>
-
+        <!-- Add more projects as needed -->
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
     <footer>
-      <div class="container-fluid p-0">
-        <div class="row text-left">
-          <div class="col-md-9">
-            <h4 class="text-light">Thank you</h4>
-            <p class="text-muted">For any Queries contact me </p>
-            <p class="gmail">@ joelbobanoffline@gmail.com</p>
-          </div>
-          <div class="col-md-3 follow">
-            <h4 class="text-light">Follow Me</h4>
-            <p class="text-muted">Let us be social</p>
-            <div class="column text-light">
-              <a href="https://www.t.me/joe_noob"
-                ><i class="fab fa-telegram"></i
-              ></a>
-              <a href="https://www.github.com/JoelBobanOffline" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/ig.itsjoel/"
-                target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='soopr-btn'></div>
-      <div class="pt-5 text-center">
-        <p class="pt-2 text-muted">
-          Copyright ©2021 All rights reserved | This site is made
-          <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by
-          <a class="sp" href="https://www.github.com/JoelBobanOffline"
-            ><span> JOEL BOBAN </span></a
-          >
-        </p>
-      </div>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="src/main.js"></script>
-  </body>
+    <script src="scripts.js"></script>
+</body>
 </html>
