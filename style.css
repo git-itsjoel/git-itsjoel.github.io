@@ -1,118 +1,91 @@
- @import url('https://fonts.googleapis.com/css?family=Roboto');
-
-
-
-.grid-2{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 body {
- font-family: "Lato", sans-serif;
- color: #fff;
- background-color: #222;
- line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
- font-family: "Raleway", sans-serif;
- color: #333;
-}
-
-a {
- color: #333;
- text-decoration: none;
-}
-
-a:hover {
- color: #444;
-}
-
-.navbar {
- background-color: #333;
-}
-
-.nav-link {
- color: #fff;
-}
-
-.nav-link:hover {
- color: #ddd;
-}
-
-.btn {
- background-color: #4caf50;
- color: #fff;
- border: none;
- padding: 10px 20px;
- text-align: center;
- text-decoration: none;
- display: inline-block;
- font-size: 16px;
- margin: 4px 2px;
- cursor: pointer;
- transition: background-color 0.3s;
-}
-
-.btn:hover {
- background-color: #45a049;
-}
-
-.social-icon {
- margin: 5px;
- font-size: 20px;
- color: #fff;
-}
-
-.social-icon:hover {
- color: #ddd;
-}
-
-.sp {
- color: #333;
-}
-
-.sp:hover {
- color: #444;
-}
-
-.footer {
- background-color: #333;
- padding: 30px 0;
-}
-
-.soopr-btn {
- display: none;
-}
-
-@media screen and (max-width: 768px) {
- .nav-item {
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
     text-align: center;
- }
-
- .soopr-btn {
-    display: block;
- }
 }
 
-/* media queres */
-@media(max-width:780px){
-    .grid-2{
-        grid-template-columns: 1fr;
-    }
-    .section-1{
-        padding:0;
-        padding-top: 5rem;
-    }
-    .section-2{
-        padding: 0;
-        padding-left: 1.5rem;
-        padding-top: 2rem;
-    }
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+#home {
+    background: #e2e2e2;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+#about, #projects, #contact {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project {
+    margin: 1rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 0.5rem 0 0.2rem;
+}
+
+form input, form textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 0.7rem;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #555;
 }
