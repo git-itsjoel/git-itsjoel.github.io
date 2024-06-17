@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Dark background color */
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.image-wrapper {
+    width: 45%;
+    padding: 10px;
+    background-color: #2e2e2e; /* Greyish-black background */
+    border: 1px solid #888; /* Small grey border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Subtle white glow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Increased glow on hover */
+}
+
+.image-wrapper img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for the image */
+}
