@@ -17,6 +17,12 @@
             align-items: center;
             flex-direction: column;
         }
+        .button-container {
+            position: absolute;
+            bottom: 20px; /* Moves button to the bottom */
+            width: 100%;
+            text-align: center;
+        }
         .button {
             background-color: #ffcc00;
             color: black;
@@ -46,14 +52,20 @@
     </style>
 </head>
 <body>
+    <!-- Background Music (Plays on Page Load) -->
     <audio id="bgMusic" autoplay loop>
         <source src="bg.mp3" type="audio/mp3">
     </audio>
 
-    <button class="button" onclick="showPopup()">Click Here</button>
+    <!-- Click Button at Bottom -->
+    <div class="button-container">
+        <button class="button" onclick="showPopup()">Click Here</button>
+    </div>
 
+    <!-- Pop-up Message -->
     <div id="popup" class="popup">നാണം ഉണ്ടോടാ 🥸</div>
     
+    <!-- Dialogue Audio (Plays when Button is Clicked) -->
     <audio id="popupAudio">
         <source src="nanamundo.mp3" type="audio/mp3">
     </audio>
@@ -61,7 +73,9 @@
     <script>
         function showPopup() {
             document.getElementById("popup").style.display = "block";
-            document.getElementById("popupAudio").play();
+            document.getElementById("bgMusic").pause(); // Stops background music
+            document.getElementById("popupAudio").play(); // Plays dialogue audio
+            
             setTimeout(() => {
                 document.getElementById("popup").style.display = "none";
             }, 3000);
