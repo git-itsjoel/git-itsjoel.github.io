@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Page</title>
+    <style>
+        body {
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .button {
+            background-color: #ffcc00;
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #ffaa00;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bgMusic" autoplay loop>
+        <source src="bg.mp3" type="audio/mp3">
+    </audio>
+
+    <button class="button" onclick="showPopup()">Click Here</button>
+
+    <div id="popup" class="popup">നാണം ഉണ്ടോടാ 🥸</div>
+    
+    <audio id="popupAudio">
+        <source src="nanamundo.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("popupAudio").play();
+            setTimeout(() => {
+                document.getElementById("popup").style.display = "none";
+            }, 3000);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let audio = document.getElementById("bgMusic");
+            audio.play().catch(() => {
+                alert("Click to enable sound!");
+                document.body.addEventListener("click", () => audio.play(), { once: true });
+            });
+        });
+    </script>
+</body>
+</html>
