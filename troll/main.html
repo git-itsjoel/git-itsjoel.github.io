@@ -84,7 +84,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             let audio = document.getElementById("bgMusic");
             audio.play().catch(() => {
-                alert("Click to enable sound!");
+                alert("Click the photo to see some magic 👽!");
                 document.body.addEventListener("click", () => audio.play(), { once: true });
             });
         });
