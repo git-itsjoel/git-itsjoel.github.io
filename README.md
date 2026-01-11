@@ -22,11 +22,11 @@ To run this project locally:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/git-itsjoel/portfolio.git
+   git clone https://github.com/git-itsjoel/git-itsjoel.github.io.git
    ```
 2. **Navigate to the directory**
    ```bash
-   cd portfolio
+   cd git-itsjoel.github.io
    ```
 3. **Open `index.html`** in your browser.
    - Or use a live server (e.g., VS Code Live Server extension).
@@ -54,3 +54,4 @@ To run this project locally:
 
 ---
 &copy; 2026 Joel. Built with Logic & Design.
+
