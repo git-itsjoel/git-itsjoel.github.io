@@ -1,0 +1,43 @@
+:root {
+    /* New Color Palette (Deep Green & Acid Lime) */
+    --bg-color: #06231D;
+    /* Deepest Green */
+    --surface-color: #0C342C;
+    /* Dark Jungle Green */
+    --surface-hover: #0f3f36;
+
+    --text-primary: #FFFDEE;
+    /* Cream White */
+    --text-secondary: #aabfb8;
+    /* Muted Sage/Grey */
+
+    --accent-color: #E3EF26;
+    /* Acid Lime */
+    --accent-secondary: #076653;
+    /* Teal Green */
+    --accent-glow: rgba(227, 239, 38, 0.3);
+    /* Lime Glow */
+
+    /* Fonts */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+
+    /* Spacing */
+    --space-sm: 1.5rem;
+    --space-md: 3rem;
+    --space-lg: 6rem;
+    --space-xl: 10rem;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    /* Larger, softer corners for Apple feel */
+    --radius-lg: 24px;
+
+    /* Animation Tokens */
+    --ease-fluid: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    /* Smooth apple-like ease */
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-fast: 0.3s var(--ease-fluid);
+    --transition-slow: 0.8s var(--ease-fluid);
+}
