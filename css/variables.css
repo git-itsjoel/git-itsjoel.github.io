@@ -41,3 +41,16 @@
     --transition-fast: 0.3s var(--ease-fluid);
     --transition-slow: 0.8s var(--ease-fluid);
 }
+
+@media (max-width: 768px) {
+    :root {
+        /* Mobile Spacing Overrides */
+        --space-sm: 1rem;
+        --space-md: 2rem;
+        --space-lg: 3rem;
+        --space-xl: 5rem;
+
+        /* Mobile Radius */
+        --radius-lg: 16px;
+    }
+}

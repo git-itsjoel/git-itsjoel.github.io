@@ -2,9 +2,8 @@
 body {
     background-color: var(--bg-color);
     /* Subtle radial gradient for depth - "Spotlight" effect */
-    background: radial-gradient(circle at 50% 0%, #0c342c 0%, #06231d 60%);
-    background-attachment: fixed;
-    /* Keeps the gradient in place effectively */
+    background-color: var(--bg-color);
+    /* Dynamic canvas will handle the background */
     color: var(--text-primary);
     font-family: var(--font-main);
     overflow-x: hidden;
@@ -42,9 +41,23 @@ a {
     margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+        /* Wider container on mobile */
+    }
+}
+
 .section {
     padding: var(--space-xl) 0;
     position: relative;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: var(--space-lg) 0;
+        /* Reduced padding on mobile */
+    }
 }
 
 .section-title {
@@ -123,19 +136,8 @@ a {
 }
 
 /* Add a cool background mesh glow for the hero */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, rgba(227, 239, 38, 0.15) 0%, transparent 70%);
-    filter: blur(80px);
-    z-index: -1;
-    pointer-events: none;
-}
+/* Hero background mesh glow removed in favor of global canvas */
+/* .hero::before removed */
 
 .hero-content {
     max-width: 900px;
@@ -152,7 +154,8 @@ a {
 }
 
 .hero h1 {
-    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    /* Adjusted lower bound */
     line-height: 1.05;
     margin-bottom: var(--space-md);
     font-weight: 800;
@@ -183,51 +186,7 @@ a {
 
 /* ... existing styles ... */
 
-/* Hero Section Background Glow */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70vw;
-    /* Increased size */
-    height: 70vw;
-    background: radial-gradient(circle, rgba(227, 239, 38, 0.2) 0%, transparent 70%);
-    /* Increased opacity */
-    filter: blur(100px);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Body Background Glow (Bottom Right) */
-body::after {
-    content: '';
-    position: fixed;
-    top: 60%;
-    left: 60%;
-    width: 50vw;
-    height: 50vw;
-    background: radial-gradient(circle, rgba(7, 102, 83, 0.25) 0%, transparent 60%);
-    /* Increased opacity */
-    filter: blur(100px);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Additional Top Left Glow for balance */
-body::before {
-    content: '';
-    position: fixed;
-    top: -10%;
-    left: -10%;
-    width: 40vw;
-    height: 40vw;
-    background: radial-gradient(circle, rgba(12, 52, 44, 0.4) 0%, transparent 60%);
-    filter: blur(80px);
-    z-index: -1;
-    pointer-events: none;
-}
+/* Body pseudo-elements removed for canvas background */
 
 .btn {
     display: inline-flex;
@@ -268,6 +227,13 @@ body::before {
     gap: 2rem;
 }
 
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        /* Stack vertically on mobile */
+    }
+}
+
 .skill-card {
     background: rgba(12, 52, 44, 0.4);
     backdrop-filter: blur(10px);
@@ -275,6 +241,17 @@ body::before {
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.03);
     transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+    .skill-card {
+        backdrop-filter: blur(8px);
+        /* Reduced blur */
+        background: rgba(12, 52, 44, 0.3);
+        /* Lower opacity */
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        /* Lighter border for visibility */
+    }
 }
 
 .skill-card:hover {
@@ -314,6 +291,13 @@ body::before {
     gap: 2.5rem;
 }
 
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* Stack vertically on mobile */
+    }
+}
+
 .project-card {
     background: var(--surface-color);
     padding: 3rem 2.5rem;
@@ -325,6 +309,16 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.02);
     position: relative;
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        backdrop-filter: blur(8px);
+        /* Reduced blur */
+        background: rgba(12, 52, 44, 0.3);
+        /* Ensure consistency if surface-color is opaque */
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
 }
 
 .project-card::before {
@@ -553,20 +547,322 @@ body::before {
 
 /* Media Queries */
 @media (max-width: 768px) {
+    body {
+        /* Fix mobile background scrolling issue (white bar) */
+        background-attachment: scroll;
+    }
+
     .navbar {
-        padding: 1rem;
+        display: none;
+        /* Remove top navigation entirely on mobile */
     }
 
     .nav-links {
+        display: flex;
+        /* Restore display */
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        padding: 0.5rem 0.8rem;
+        /* Touch target size */
+        background: rgba(255, 255, 255, 0.05);
+        /* Slight backing for pill look */
+        border-radius: 20px;
+    }
+
+    .logo {
         display: none;
+        /* Hide logo on very small screens to save space for links, or keep it if space allows. 
+           For this design, let's keep nav links prioritized */
     }
 
     .hero {
         justify-content: center;
         text-align: center;
+        min-height: 85svh;
+        /* Reduced from 100svh to make it smaller as requested */
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        /* Further reduced font size */
+        margin-bottom: 1.5rem;
     }
 
     .btn {
         padding: 0.8rem 2rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        /* Allow wrapping on small screens */
+        gap: 0.8rem;
+    }
+
+    .social-links a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        /* Smaller padding */
+    }
+
+    .email-link {
+        font-size: 1.25rem;
+        /* Prevent email from breaking layout */
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    /* Mobile Card Optimizations */
+    .skill-card,
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .skill-card h3,
+    .project-header h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile-First Optimization (360px-430px) */
+
+    .navbar {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .hero {
+        min-height: auto;
+        /* Allow content to dictate height, preventing forced scroll */
+        height: 100svh;
+        /* Target full viewport height */
+        padding-top: 70px;
+        /* Reduced from 60px + breathing room */
+        align-items: center;
+        /* Ensure vertical center */
+        padding-bottom: 2rem;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .eyebrow {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        /* Ensure space from bottom */
+    }
+
+    .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: var(--accent-color);
+        z-index: 1001;
+        transition: width 0.1s linear;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        /* Scaled down from 3rem */
+        margin-bottom: 2rem;
+        /* Tighter spacing */
+    }
+}
+
+/* Gradient Parallax Background */
+.bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    /* Fallback */
+    pointer-events: none;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+}
+
+/* Base Orb: Deep Atmospheric Green */
+.orb-1 {
+    width: 120vw;
+    height: 120vh;
+    background: radial-gradient(circle, #0C342C 0%, transparent 70%);
+    top: -20%;
+    left: -10%;
+    opacity: 0.8;
+    animation: drift 25s infinite alternate ease-in-out;
+}
+
+/* Accent Orb: Primary Green -> Soft Yellow */
+.orb-2 {
+    width: 80vw;
+    height: 80vh;
+    background: radial-gradient(circle, var(--accent-secondary) 0%, var(--accent-glow) 100%);
+    bottom: -10%;
+    right: -20%;
+    opacity: 0.5;
+    animation: float 20s infinite ease-in-out;
+}
+
+/* Highlight Orb: Light Subtle Overlay */
+.orb-3 {
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(227, 239, 38, 0.15) 0%, transparent 60%);
+    top: 40%;
+    left: 30%;
+    filter: blur(60px);
+    opacity: 0.4;
+    animation: pulse 15s infinite alternate ease-in-out;
+}
+
+/* Ambient Animations */
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -50px) rotate(5deg);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes drift {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1) translate(-2%, 2%);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+}
+
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.vignette-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Static anchor: Darkened edges to make center motion more apparent */
+    background: radial-gradient(circle at center, transparent 30%, rgba(6, 35, 29, 0.4) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .gradient-orb {
+        filter: blur(50px);
+        /* Reduce blur radius for performance */
+    }
+
+    /* Mobile Contrast Enhancements */
+    /* Deeper base layer to create more depth */
+    .orb-1 {
+        background: radial-gradient(circle, #05201A 0%, transparent 70%);
+        opacity: 0.9;
+    }
+
+    /* Brighter accents to pop against deeper base */
+    .orb-2 {
+        opacity: 0.7;
+    }
+
+    .orb-3 {
+        opacity: 0.6;
     }
 }
