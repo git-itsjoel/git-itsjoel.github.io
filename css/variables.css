@@ -1,56 +1,50 @@
 :root {
-    /* New Color Palette (Deep Green & Acid Lime) */
-    --bg-color: #06231D;
-    /* Deepest Green */
-    --surface-color: #0C342C;
-    /* Dark Jungle Green */
-    --surface-hover: #0f3f36;
+    /* ── CORAL WAVE PALETTE ── */
+    --cream:    #FCEDD8;
+    --gold:     #FFD464;
+    --coral:    #FF5E5E;
+    --pink:     #E23C64;
+    --crimson:  #B0183D;
 
-    --text-primary: #FFFDEE;
-    /* Cream White */
-    --text-secondary: #aabfb8;
-    /* Muted Sage/Grey */
+    /* ── BG & SURFACES ── */
+    --bg:            #0d0408;
+    --surface:       rgba(252, 237, 216, 0.06);
+    --surface-hover: rgba(252, 237, 216, 0.11);
+    --border:        rgba(252, 237, 216, 0.10);
+    --border-bright: rgba(252, 237, 216, 0.20);
 
-    --accent-color: #E3EF26;
-    /* Acid Lime */
-    --accent-secondary: #076653;
-    /* Teal Green */
-    --accent-glow: rgba(227, 239, 38, 0.3);
-    /* Lime Glow */
+    /* ── TEXT ── */
+    --text-primary:   #FCEDD8;
+    --text-secondary: rgba(252, 237, 216, 0.55);
+    --text-tertiary:  rgba(252, 237, 216, 0.28);
 
-    /* Fonts */
-    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-mono: 'Space Mono', monospace;
+    /* ── GLOWS ── */
+    --gold-glow:  rgba(255, 212, 100, 0.30);
+    --pink-glow:  rgba(226,  60, 100, 0.30);
+    --coral-glow: rgba(255,  94,  94, 0.25);
 
-    /* Spacing */
-    --space-sm: 1.5rem;
-    --space-md: 3rem;
-    --space-lg: 6rem;
-    --space-xl: 10rem;
+    /* ── TYPOGRAPHY ── */
+    --font-display: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    --font-text:    -apple-system, 'SF Pro Text',    'Helvetica Neue', sans-serif;
+    --font-mono:    'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
 
-    /* Radius */
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    /* Larger, softer corners for Apple feel */
-    --radius-lg: 24px;
+    /* ── SPACING ── */
+    --s1: 0.5rem; --s2: 1rem;  --s3: 1.5rem;
+    --s4: 2rem;   --s6: 3rem;  --s8: 4rem;
+    --s12: 6rem;  --s16: 8rem;
 
-    /* Animation Tokens */
-    --ease-fluid: cubic-bezier(0.25, 0.1, 0.25, 1.0);
-    /* Smooth apple-like ease */
-    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-    --transition-fast: 0.3s var(--ease-fluid);
-    --transition-slow: 0.8s var(--ease-fluid);
+    /* ── RADIUS ── */
+    --r-sm: 10px; --r-md: 18px; --r-lg: 28px;
+    --r-xl: 40px; --r-pill: 9999px;
+
+    /* ── MOTION ── */
+    --ease-apple:  cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-out:    cubic-bezier(0.0,  0,   0.2,  1);
+    --t-fast: 0.2s var(--ease-apple);
+    --t-med:  0.4s var(--ease-apple);
+    --t-slow: 0.7s var(--ease-apple);
 }
-
 @media (max-width: 768px) {
-    :root {
-        /* Mobile Spacing Overrides */
-        --space-sm: 1rem;
-        --space-md: 2rem;
-        --space-lg: 3rem;
-        --space-xl: 5rem;
-
-        /* Mobile Radius */
-        --radius-lg: 16px;
-    }
+    :root { --s12: 4rem; --s16: 5rem; }
 }

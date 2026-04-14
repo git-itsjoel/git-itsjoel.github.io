@@ -4,188 +4,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Portfolio of a B.Tech AI Student & Tech Builder">
-    <title>Joel | AI Engineer & Creative Developer</title>
-
-    <!-- Google Fonts -->
+    <meta name="description" content="Portfolio of Joel — B.Tech AI Engineer & Creative Developer.">
+    <title>Joel · AI Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
         rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="bg-layer">
-        <div class="parallax-layer layer-1">
-            <div class="gradient-orb orb-1"></div>
-        </div>
-        <div class="parallax-layer layer-2">
-            <div class="gradient-orb orb-2"></div>
-        </div>
-        <div class="parallax-layer layer-3">
-            <div class="gradient-orb orb-3"></div>
-        </div>
-        <div class="noise-overlay"></div>
-        <div class="vignette-overlay"></div>
-    </div>
-    <div class="scroll-progress"></div>
 
-    <nav class="navbar">
-        <div class="logo">itsjoel.dev</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Custom cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Ambient background -->
+    <div class="bg-canvas">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grain"></div>
+    </div>
+
+    <!-- Scroll progress line -->
+    <div class="scroll-line"></div>
+
+
+    <!-- ══ ISLAND NAV ══ -->
+    <nav class="island-nav" id="island-nav">
+        <a href="#hero" class="nav-item active" data-section="hero">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="#about" class="nav-item" data-section="about">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" />
+            </svg>
+            <span>About</span>
+        </a>
+        <a href="#skills" class="nav-item" data-section="skills">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+            </svg>
+            <span>Skills</span>
+        </a>
+        <a href="#projects" class="nav-item" data-section="projects">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+            </svg>
+            <span>Work</span>
+        </a>
+        <a href="#contact" class="nav-item" data-section="contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span>Contact</span>
+        </a>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <p class="eyebrow" data-animate>Hello, I'm Joel</p>
-            <h1 data-animate>Building Intelligence <br>Designing the Future</h1>
-            <p class="tagline" data-animate>AI Engineer / Creative Coder / Sound Tech Enthusiast</p>
-            <a href="#projects" class="btn primary-btn" data-animate>View Projects</a>
-        </div>
-    </header>
+    <!-- ══ HERO — TYPOGRAPHIC ══ -->
+    <section id="hero" class="hero-section">
+        <div class="hero-inner">
 
+            <!-- Eyebrow tag -->
+            <p class="hero-eyebrow" data-reveal-fast>
+                <span class="eyebrow-dot"></span>
+                Available for opportunities
+            </p>
+
+            <!-- Main typographic statement -->
+            <h1 class="hero-heading">
+                <span class="line line-1" data-reveal-line="0">Architecting</span>
+                <span class="line line-2" data-reveal-line="1">
+                    <em>Intelligence</em><span class="period">.</span>
+                </span>
+                <span class="line line-3" data-reveal-line="2">Crafting the</span>
+                <span class="line line-4" data-reveal-line="3">
+                    <span class="outline-text">Future</span><span class="period">.</span>
+                </span>
+            </h1>
+
+            <!-- Descriptor row -->
+            <div class="hero-meta" data-reveal-fast>
+                <div class="hero-tag">B.Tech AI</div>
+                <div class="hero-divider"></div>
+                <div class="hero-tag">Creative Dev</div>
+                <div class="hero-divider"></div>
+                <div class="hero-tag">Kerala, India</div>
+            </div>
+
+            <!-- CTA row -->
+            <div class="hero-ctas" data-reveal-fast>
+                <a href="#projects" class="cta-primary">View Projects</a>
+                <a href="#about" class="cta-ghost">About me ↓</a>
+            </div>
+
+        </div>
+
+        <!-- Floating marquee strip -->
+        <div class="marquee-wrap">
+            <div class="marquee-track">
+                <span>AI Engineering</span><span class="mx">✦</span>
+                <span>Deep Learning</span><span class="mx">✦</span>
+                <span>Creative Dev</span><span class="mx">✦</span>
+                <span>PyTorch</span><span class="mx">✦</span>
+                <span>React</span><span class="mx">✦</span>
+                <span>Three.js</span><span class="mx">✦</span>
+                <span>System Design</span><span class="mx">✦</span>
+                <span>WebGL</span><span class="mx">✦</span>
+                <span>AI Engineering</span><span class="mx">✦</span>
+                <span>Deep Learning</span><span class="mx">✦</span>
+                <span>Creative Dev</span><span class="mx">✦</span>
+                <span>PyTorch</span><span class="mx">✦</span>
+                <span>React</span><span class="mx">✦</span>
+                <span>Three.js</span><span class="mx">✦</span>
+                <span>System Design</span><span class="mx">✦</span>
+                <span>WebGL</span><span class="mx">✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ ABOUT ══ -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title"><span class="hash">#</span> About</h2>
-            <div class="about-content">
-                <p>B.Tech AI Student. Full-stack Developer. Builder of things. I turn complex problems into simple,
-                    automated solutions.</p>
+            <p class="section-eyebrow">Track 01</p>
+            <h2 class="section-title">About<span class="accent-dot">.</span></h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm an <strong>Artificial Intelligence Engineer</strong> obsessed with bridging the gap between
+                        elegant algorithms and beautiful digital experiences.</p>
+                    <p>Currently pursuing my B.Tech in AI, I specialize in training robust machine learning models and
+                        transforming complex logic into seamless, high-performance systems.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card" data-reveal>
+                        <span class="stat-val">2023</span>
+                        <span class="stat-key">Started B.Tech AI</span>
+                    </div>
+                    <div class="stat-card" data-reveal>
+                        <span class="stat-val">∞</span>
+                        <span class="stat-key">Ideas brewing</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- ══ SKILLS ══ -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title"><span class="hash">#</span> Skills</h2>
+            <p class="section-eyebrow">Track 02</p>
+            <h2 class="section-title">Skills<span class="accent-dot">.</span></h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Programming</h3>
+                <div class="skill-card" data-reveal>
+                    <p class="skill-num">01</p>
+                    <h3>Core Engineering</h3>
                     <ul>
-                        <li>Python (PyTorch, TensorFlow)</li>
-                        <li>C++</li>
-                        <li>JavaScript (ES6+)</li>
+                        <li>Python · PyTorch · TensorFlow</li>
+                        <li>C++ / System Level</li>
+                        <li>TypeScript & JavaScript</li>
                     </ul>
                 </div>
-                <div class="skill-card">
-                    <h3>Web Dev</h3>
+                <div class="skill-card" data-reveal>
+                    <p class="skill-num">02</p>
+                    <h3>Digital Experiences</h3>
                     <ul>
-                        <li>HTML5 & CSS3</li>
-                        <li>React / Next.js Basics</li>
-                        <li>WebGL / Three.js</li>
+                        <li>React & Next.js</li>
+                        <li>HTML5, CSS3, SCSS</li>
+                        <li>WebGL & Three.js</li>
                     </ul>
                 </div>
-                <div class="skill-card">
-                    <h3>Tools & Tech</h3>
+                <div class="skill-card" data-reveal>
+                    <p class="skill-num">03</p>
+                    <h3>Architecture & Tools</h3>
                     <ul>
-                        <li>Git & GitHub</li>
-                        <li>Linux / Bash</li>
-                        <li>Audio Processing (DSP)</li>
+                        <li>Linux, Bash, Git</li>
+                        <li>Cloud Deployment & APIs</li>
+                        <li>DSP & Signal Processing</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ══ PROJECTS ══ -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title"><span class="hash">#</span> Selected Projects</h2>
+            <p class="section-eyebrow">Track 03</p>
+            <h2 class="section-title">Projects<span class="accent-dot">.</span></h2>
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>MedReady <span class="accent">//</span> App</h3>
-                        <a href="https://github.com/git-itsjoel/medready" class="github-link"
-                            aria-label="GitHub Link">GitHub ↗</a>
-                    </div>
-                    <p class="problem-statement">Real-time medicine availability checker to eliminate hospital pharmacy
-                        queues.</p>
-                    <div class="tech-stack">
-                        <span>Full Stack</span><span>Real-time DB</span><span>Web App</span>
-                    </div>
-                    <p class="outcome">Enables patients and doctors to check stock levels instantly, minimizing wait
-                        times.</p>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>AutoPicX <span class="accent">//</span> Bot</h3>
-                        <a href="https://github.com/git-itsjoel/AutoPicX" class="github-link"
-                            aria-label="GitHub Link">GitHub ↗</a>
-                    </div>
-                    <p class="problem-statement">Telegram User Bot that automatically updates profile pictures on a
-                        schedule.</p>
-                    <div class="tech-stack">
-                        <span>Python</span><span>Telegram API</span><span>Automation</span>
-                    </div>
-                    <p class="outcome">Automated profile management tool with time-based triggering logic.</p>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>LAN File Share <span class="accent">//</span> Server</h3>
-                        <a href="https://github.com/git-itsjoel/lan-file-share" class="github-link"
-                            aria-label="GitHub Link">GitHub ↗</a>
-                    </div>
-                    <p class="problem-statement">Instant local network file and text sharing system.</p>
-                    <div class="tech-stack">
-                        <span>Flask</span><span>Python</span><span>Networking</span>
-                    </div>
-                    <p class="outcome">Allows seamless upload, download, and file previewing over LAN without internet.
-                    </p>
-                </article>
+                <!-- Loaded dynamically from GitHub API -->
             </div>
         </div>
     </section>
 
+    <!-- ══ EDUCATION ══ -->
     <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title"><span class="hash">#</span> Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="year">2025 - Present</span>
-                    <div class="timeline-content">
-                        <h3>B.Tech in Artificial Intelligence</h3>
-                        <p>Focus on Deep Learning, Data Structures, and System Design.</p>
-                    </div>
+            <p class="section-eyebrow">Track 04</p>
+            <h2 class="section-title">Education<span class="accent-dot">.</span></h2>
+            <div class="edu-card" data-reveal>
+                <div class="edu-year">2023 → Present</div>
+                <div class="edu-body">
+                    <h3>B.Tech in Artificial Intelligence</h3>
+                    <p>Specializing in advanced Machine Learning algorithms, scalable Data Structures, and robust System
+                        Architecture.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- ══ SOCIALS ══ -->
+    <section id="socials" class="section">
         <div class="container">
-            <h2 class="section-title"><span class="hash">#</span> Contact</h2>
-            <div class="contact-wrapper">
-                <p>INTERESTED IN COLLABORATING?</p>
-                <a href="mailto:thejoelboban@gmail.com" class="email-link">thejoelboban@gmail.com</a>
-                <div class="social-links">
-                    <a href="https://github.com/git-itsjoel">GitHub</a>
-                    <a href="https://www.linkedin.com/in/joel-boban-7a8364393/">LinkedIn</a>
-                    <a href="https://www.instagram.com/ig.itsjoel/">Instagram</a>
-                </div>
+            <p class="section-eyebrow">Track 05</p>
+            <h2 class="section-title">Socials<span class="accent-dot">.</span></h2>
+            <div class="socials-grid">
+                <a href="https://github.com/git-itsjoel" target="_blank" rel="noopener" class="social-card github-card"
+                    data-reveal>
+                    <div class="social-cover">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>GitHub</h3>
+                        <p>Code & Projects</p>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+                <a href="https://www.linkedin.com/in/joel-boban-7a8364393/" target="_blank" rel="noopener"
+                    class="social-card linkedin-card" data-reveal>
+                    <div class="social-cover">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>LinkedIn</h3>
+                        <p>Professional</p>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+                <a href="https://www.instagram.com/ig.itsjoel/" target="_blank" rel="noopener"
+                    class="social-card instagram-card" data-reveal>
+                    <div class="social-cover">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Instagram</h3>
+                        <p>Creative</p>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+                <a href="https://www.snapchat.com/add/ig.itsjoel" target="_blank" rel="noopener"
+                    class="social-card snapchat-card" data-reveal>
+                    <div class="social-cover">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 468.339 468.339" style="enable-background:new 0 0 468.339 468.339;" xml:space="preserve">
+<path style="fill:#050505;" d="M233.962,33.724c62.857,0.021,115.216,52.351,115.292,115.36c0.018,14.758,0.473,28.348,1.306,40.867
+	c0.514,7.724,6.938,13.448,14.305,13.448c1.085,0,2.19-0.124,3.3-0.384l19.691-4.616c0.838-0.197,1.679-0.291,2.51-0.291
+	c5.001,0,9.606,3.417,10.729,8.478c1.587,7.152-2.42,14.378-9.35,16.808l-29.89,12.066c-7.546,3.046-11.599,11.259-9.474,19.115
+	c23.98,88.654,90.959,79.434,90.959,90.984c0,14.504-50.485,16.552-55.046,21.114s-0.198,26.701-10.389,30.987
+	c-1.921,0.808-4.65,1.089-7.979,1.089c-7.676,0-18.532-1.498-29.974-1.498c-9.925,0-20.291,1.127-29.404,5.337
+	c-24.176,11.168-47.484,32.028-76.378,32.028s-52.202-20.86-76.378-32.028c-9.115-4.211-19.478-5.337-29.404-5.337
+	c-11.441,0-22.299,1.498-29.974,1.498c-3.327,0-6.059-0.282-7.979-1.089c-10.191-4.286-5.828-26.425-10.389-30.987
+	S25,360.062,25,345.558c0-11.551,66.979-2.331,90.959-90.984c2.125-7.855-1.928-16.068-9.475-19.115l-29.89-12.066
+	c-6.931-2.43-10.938-9.656-9.35-16.808c1.123-5.062,5.728-8.479,10.729-8.478c0.83,0,1.672,0.094,2.51,0.291l19.691,4.616
+	c1.11,0.26,2.215,0.384,3.3,0.384c7.366,0,13.791-5.725,14.305-13.448c0.833-12.519,1.289-26.109,1.307-40.867
+	C119.162,86.075,171.104,33.746,233.962,33.724 M233.97,8.724h-0.009h-0.009C215.19,8.73,196.913,12.5,179.631,19.93
+	c-16.589,7.131-31.519,17.299-44.375,30.222c-12.839,12.906-22.943,27.889-30.031,44.533c-7.37,17.307-11.118,35.599-11.141,54.368
+	c-0.011,9.215-0.202,18.158-0.57,26.722l-7.326-1.718c-2.688-0.63-5.452-0.95-8.213-0.951c-7.973-0.001-15.838,2.694-22.146,7.588
+	c-6.581,5.106-11.196,12.377-12.993,20.474c-4.277,19.273,6.365,38.73,24.807,45.572l21.937,8.855
+	c-14.526,44.586-41.311,53.13-59.348,58.885c-4.786,1.527-8.92,2.846-12.856,4.799C1.693,327.063,0,340.25,0,345.558
+	c0,10.167,4.812,19.445,13.551,26.124c4.351,3.326,9.741,6.07,16.477,8.389c9.181,3.161,19.824,5.167,28.474,6.775
+	c0.418,3.205,1.031,6.648,2.064,10.118c4.289,14.411,13.34,20.864,20.178,23.739c6.488,2.729,13.192,3.044,17.67,3.044
+	c4.38,0,9.01-0.343,13.912-0.706c5.259-0.39,10.697-0.792,16.062-0.792c8.314,0,14.503,0.992,18.92,3.032
+	c6.065,2.802,12.497,6.58,19.307,10.579c18.958,11.134,40.445,23.754,67.555,23.754s48.596-12.62,67.554-23.754
+	c6.81-4,13.242-7.777,19.308-10.579c4.417-2.041,10.606-3.032,18.92-3.032c5.365,0,10.803,0.403,16.061,0.792
+	c4.902,0.363,9.532,0.706,13.912,0.706c4.478,0,11.181-0.315,17.67-3.044c6.838-2.875,15.889-9.328,20.178-23.739
+	c1.033-3.47,1.647-6.913,2.064-10.118c8.65-1.609,19.294-3.614,28.474-6.775c6.737-2.319,12.126-5.063,16.477-8.389
+	c8.738-6.679,13.551-15.957,13.551-26.124c0-5.308-1.693-18.495-17.378-26.278c-3.936-1.953-8.07-3.272-12.856-4.799
+	c-18.037-5.754-44.822-14.299-59.348-58.885l21.936-8.855c18.442-6.842,29.085-26.3,24.808-45.573
+	c-1.797-8.097-6.412-15.368-12.993-20.474c-6.308-4.893-14.171-7.588-22.142-7.588c-2.761,0-5.525,0.32-8.215,0.95l-7.327,1.718
+	c-0.368-8.563-0.559-17.506-0.57-26.722c-0.023-18.784-3.801-37.094-11.23-54.424c-7.131-16.636-17.29-31.615-30.194-44.522
+	c-12.903-12.906-27.875-23.063-44.498-30.188C271.017,12.497,252.727,8.731,233.97,8.724L233.97,8.724z"/>
+</svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Snapchat</h3>
+                        <p>Daily Snaps</p>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+                <a href="https://t.me/igitsjoel" target="_blank" rel="noopener"
+                    class="social-card telegram-card" data-reveal>
+                    <div class="social-cover">
+                        <svg fill="#ffffff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:none;} </style> <path d="M19.2,4.4L2.9,10.7c-1.1,0.4-1.1,1.1-0.2,1.3l4.1,1.3l1.6,4.8c0.2,0.5,0.1,0.7,0.6,0.7c0.4,0,0.6-0.2,0.8-0.4 c0.1-0.1,1-1,2-2l4.2,3.1c0.8,0.4,1.3,0.2,1.5-0.7l2.8-13.1C20.6,4.6,19.9,4,19.2,4.4z M17.1,7.4l-7.8,7.1L9,17.8L7.4,13l9.2-5.8 C17,6.9,17.4,7.1,17.1,7.4z"></path> <rect y="0" class="st0" width="24" height="24"></rect> </g></svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Telegram</h3>
+                        <p>Message !!</p>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
+                <a href="https://www.pinterest.com/igitsjoel/" target="_blank" rel="noopener"
+                    class="social-card pinterest-card" data-reveal>
+                    <div class="social-cover">
+                        <svg fill="#ffffff" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M796.863 1332.48C745.587 1596.875 679.29 1787.52 494.067 1920c-57.26-399.473 84.029-699.445 149.534-1018.165-111.811-185.11 13.44-557.816 249.036-466.108 289.92 113.054-230.174 661.384 133.044 733.327 379.257 74.993 515.012-572.16 279.982-807.303-339.727-339.502-1016.584-51.615-911.21 429.74 42.466 194.034-101.986 249.262-101.986 249.262C175.46 993.318 164.28 829.1 170.265 668.838 183.705 300.31 506.49 42.24 830.293 6.438c409.525-45.177 793.864 148.066 846.833 527.548 59.859 428.16-176.979 920.019-614.965 886.588-118.588-9.035-265.298-88.094-265.298-88.094" fill-rule="evenodd"></path> </g></svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Pinterest</h3>
+                        <p>Visual board</p>
+                    </div>
+                    <span class="social-arrow">↗</span>
+                </a>
             </div>
+        </div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact" class="section section-contact">
+        <div class="container">
+            <p class="section-eyebrow">Encore</p>
+            <h2 class="section-title contact-heading">
+                Let's build<br>
+                something<br>
+                <span class="contact-gold">extraordinary</span><span class="accent-dot">.</span>
+            </h2>
+            <a href="mailto:thejoelboban@gmail.com" class="email-link">
+                <span>thejoelboban@gmail.com</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 Joel. Built with Logic & Design.</p>
+        <p>© 2026 Joel Boban · Built with logic & love.</p>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
-
 
 </html>
