@@ -119,6 +119,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (ring) ring.style.display = 'none';
     }
 
+    /* ── CARD SPOTLIGHT (desktop only) ── */
+    if (!isTouch && !isLowSpec) {
+        document.querySelectorAll('.social-card').forEach(el => {
+            let spotRaf = false;
+            let cx = 0, cy = 0;
+            el.addEventListener('mousemove', e => {
+                cx = e.offsetX; cy = e.offsetY;
+                if (!spotRaf) {
+                    spotRaf = true;
+                    requestAnimationFrame(() => {
+                        el.style.setProperty('--mx', cx + 'px');
+                        el.style.setProperty('--my', cy + 'px');
+                        spotRaf = false;
+                    });
+                }
+            });
+        });
+    }
+
     /* ── ACTIVE NAV (IntersectionObserver — zero scroll cost) ── */
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-item[data-section]');
@@ -289,5 +308,40 @@ document.addEventListener('DOMContentLoaded', () => {
         @keyframes sk-pulse{0%,100%{opacity:.4}50%{opacity:.9}}
     `;
     document.head.appendChild(skStyle);
+
+    /* ── IMAGE MODAL (Creative Section) ── */
+    const modal = document.getElementById('image-modal');
+    if (modal) {
+        const modalImg = modal.querySelector('.modal-img');
+        const modalClose = modal.querySelector('.modal-close');
+        const modalBackdrop = modal.querySelector('.modal-backdrop');
+
+        document.querySelectorAll('.creative-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                if (img) {
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { if (!modal.classList.contains('active')) modalImg.src = ''; }, 400);
+        };
+
+        modalClose.addEventListener('click', closeModal);
+        modalBackdrop.addEventListener('click', closeModal);
+        
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 
 });
