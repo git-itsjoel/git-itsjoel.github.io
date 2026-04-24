@@ -707,31 +707,236 @@ body.nav-scrolled .island-nav {
     transform: none !important;
 }
 
-/* ── ABOUT ── */
-.about-grid {
+/* ══════════════════════════════
+   ABOUT — CREATIVE REDESIGN
+══════════════════════════════ */
+.about-identity {
     display: grid;
-    grid-template-columns: 1fr 240px;
+    grid-template-columns: 320px 1fr;
     gap: var(--s8);
     align-items: start;
 }
 
-.about-text p {
-    font-size: clamp(1rem, 1.8vw, 1.15rem);
-    line-height: 1.8;
-    color: var(--text-secondary);
-    margin-bottom: 1.2rem;
+/* ── PHOTO COLUMN ── */
+.about-photo-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
-.about-text strong {
+.about-photo-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.photo-aura {
+    position: absolute;
+    inset: -10%;
+    background: radial-gradient(circle, var(--pink-glow) 0%, var(--gold-glow) 50%, transparent 70%);
+    filter: blur(40px);
+    opacity: 0.3;
+    z-index: 0;
+    transition: opacity 0.6s ease;
+}
+
+.about-photo-wrapper:hover .photo-aura {
+    opacity: 0.7;
+}
+
+.about-photo-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--r-md);
+    z-index: 1;
+    border: 1px solid var(--border-bright);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: var(--bg);
+    animation: float-photo 6s ease-in-out infinite;
+}
+
+@keyframes float-photo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Semi-grayscale photo with transition on hover */
+.about-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(70%) contrast(1.1) brightness(0.92);
+    transition: filter 0.6s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.about-photo-frame:hover .about-photo {
+    filter: grayscale(0%) contrast(1.05) brightness(1.0);
+    transform: scale(1.05);
+}
+
+/* Glassmorphism Badge (Personal Details) */
+.photo-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 4, 8, 0.65);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--r-pill);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    transition: transform var(--t-fast), border-color var(--t-fast);
+}
+
+.about-photo-frame:hover .photo-badge {
+    transform: translateX(-50%) translateY(-6px);
+    border-color: rgba(255, 212, 100, 0.5);
+}
+
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px var(--gold-glow);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Subtle glass overlay reflection */
+.photo-glass-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Name block below photo */
+.about-name-block {
+    padding: 0 2px;
+}
+
+.about-name-label {
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.3rem;
+}
+
+.about-name {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+
+.about-location {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+}
+.about-location svg { flex-shrink: 0; opacity: 0.6; }
+
+/* ── CONTENT COLUMN ── */
+.about-content-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding-top: 0.5rem;
+}
+
+.about-intro {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.25rem;
+}
+
+.about-hi {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.about-display-name {
+    font-size: clamp(2.8rem, 5vw, 3.8rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.about-bio-lead {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    line-height: 1.75;
+    color: var(--text-secondary);
+    border-left: 2px solid var(--gold);
+    padding-left: 1rem;
+}
+
+.about-bio {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.about-bio strong {
     color: var(--text-primary);
     font-weight: 600;
 }
 
+/* chips */
+.about-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.chip {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(255, 212, 100, 0.25);
+    background: rgba(255, 212, 100, 0.07);
+    border-radius: var(--r-pill);
+    padding: 0.3rem 0.75rem;
+}
+
+/* stats row */
+.about-stats-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.about-stats-row .stat-card {
+    flex: 1;
+}
+
+/* Keep old .about-stats for backwards compat (mobile overrides) */
 .about-stats {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
 
 .stat-card {
     background: var(--surface);
@@ -1405,12 +1610,26 @@ body.low-spec .island-nav {
 }
 
 @media (max-width: 900px) {
-    .about-grid {
+    .about-identity {
         grid-template-columns: 1fr;
     }
 
-    .about-stats {
+    .about-photo-col {
         flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .about-photo-wrapper {
+        flex: 0 0 220px;
+    }
+
+    .about-photo-frame {
+        max-width: 100%;
+    }
+
+    .about-stats-row {
+        flex-wrap: wrap;
     }
 
     .skills-grid {
@@ -1457,6 +1676,34 @@ body.low-spec .island-nav {
     .socials-grid {
         grid-template-columns: 1fr;
         max-width: 100%;
+    }
+
+    .about-photo-col {
+        gap: 1.2rem;
+    }
+
+    .about-photo-wrapper {
+        flex: 0 0 200px;
+    }
+
+    .photo-badge {
+        font-size: 0.5rem;
+        padding: 0.3rem 0.6rem;
+        bottom: 8px;
+    }
+
+    .badge-dot {
+        width: 4px;
+        height: 4px;
+    }
+
+    .about-name {
+        font-size: clamp(1.4rem, 6vw, 1.8rem);
+        margin-bottom: 0.2rem;
+    }
+
+    .about-name-label {
+        font-size: 0.55rem;
     }
 
     .edu-card {
